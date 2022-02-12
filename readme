@@ -1,0 +1,41 @@
+I have executed 4 test cases for the given scenarios.
+For the first test i'm creating a new gist and verifying
+that we are getting the correct response by asserting it.
+Then i delete the created gist for the clean-up after the test.
+The third scenario in the assignment said that we have to verify
+if we are able to create a gist without sending user-agent in the
+header. I tried verifying manually so even if the docs state that
+user-agent is required, the gists still get created and no error
+is show even if we don't send user-agent in header.
+Whereas the defining factor is the token. If we don't pass
+the token we get a 422 error. I have written a test-case for
+the auth-token. The user-agent testcase will fail as i expect it
+to throw an error by it returns as a success.
+
+
+for running the test you just have to pull my branch through
+github and can go the application main class and run the
+whole suite or run them one by one.
+
+My thought process while writing these test-case was
+for starters i made all these calls on postman first
+to get a real glimpse of how this works.then i moved on
+to writing test-cases on it.
+Since it was mentioned in the task the new gist should
+have specific contents in the files that's reason i
+put an assert on it.
+
+After verifying i do a delete call to just erase any
+the unwanted gist as it was creating duplicate gists
+with same contents and files while i was running these
+tests.Since it is the test which is testing if the endpoint
+is behaving as expected so I assume we are worried about the
+data being deleted.I created variables for auth, baseurl and
+headers to make the test look better and it is easy to use that way.
+
+To make this even better if I had more time i would create a helpers class
+where i would save the json body and other variables to make my tests
+look more clean.
+
+
+
